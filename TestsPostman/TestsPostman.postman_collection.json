@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "3126c505-ead9-4f85-ae0f-47e32b259022",
+		"name": "TestsPostman",
+		"description": "Activité micro-services avec Spring boot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9090/AdminProduits",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/AdminProduits",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"AdminProduits"
+					]
+				},
+				"description": "P1:Affichage de la marge"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/Produits",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"id\": 4,\n        \"nom\": \"Téléviseur 4K\",\n        \"prix\": 0,\n        \"prixAchat\": 2200\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:9090/Produits/tri",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"Produits",
+						"tri"
+					]
+				},
+				"description": "P2: Tri par ordre alphabétique"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/Produits/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"id\": 4,\n        \"nom\": \"Téléviseur 4K\",\n        \"prix\": 0,\n        \"prixAchat\": 2200\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:9090/Produits/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"Produits",
+						""
+					]
+				},
+				"description": "Prix de vente égal à 0"
+			},
+			"response": []
+		}
+	]
+}
